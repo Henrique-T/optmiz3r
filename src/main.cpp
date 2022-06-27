@@ -1,5 +1,5 @@
 #include <iostream>
-#include "library.hpp"
+#include "libs/library.hpp"
 
 int main(int argc, char** argv) {
     auto cli = mainStructures::CLI(argc, argv);

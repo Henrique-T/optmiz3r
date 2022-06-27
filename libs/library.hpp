@@ -13,7 +13,6 @@
     // 2. Define main structures DONE
     // 3. CLI integration
     // 4. Comment documentation on classes
-    // 5. Properly define constructors in library.cpp
 
 namespace logger {
     class Logger {
@@ -37,7 +36,7 @@ namespace data {
             double _value;
         public:
             Variable(std::string name, double value) {_name = name; _value = value;};
-            Variable();
+            Variable() {_name = ""; _value = 0.0;};
             ~Variable();
 
             std::string get_name();
@@ -75,7 +74,6 @@ namespace data {
             Constraint(Expression expression) {_expression = expression;};
             Constraint();
             ~Constraint();
-
     };
 
     class Objective {
@@ -85,6 +83,14 @@ namespace data {
             Objective(Expression expression) {_expression = expression;};
             Objective();
             ~Objective();
+    };
+
+    class File {
+        private:
+            std::string _name;
+        public:
+            File() {_name = "optmiz3r_result.txt";};
+            ~File();
     };
 }
 
@@ -102,6 +108,27 @@ namespace mainStructures {
             std::string get_command();
             void activate_optmization();
             void deactivate_optmization();
+    };
+
+    // Entry class for 
+    class Optimizer {
+        private:
+            mainStructures::Optimization _optimzation;
+        public:
+            Optimizer();
+            ~Optimizer();
+    };
+
+    class Optimization {
+        private:
+            data::Variable _variables;
+            data::Expression _expression;
+            data::Constraint _constraint;
+            data::Objective _objective;
+            int  _outputFile;
+        public:
+            Optimization();
+            ~Optimization();
     };
 }
 
