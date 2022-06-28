@@ -61,3 +61,21 @@ std::string mainStructures::CLI::get_command() {
     return _command;
 }
 
+void mainStructures::Optimizer::create_optimization(int argc, char** argv) {
+    //
+}
+
+mainStructures::Optimization mainStructures::Optimizer::get_optimization() {
+    //
+}
+
+void mainStructures::Optimizer::set_optimization(mainStructures::Optimization optimization) {
+    _optimization = optimization;
+}
+
+
+            // Optimization get_optimization();
+            // void set_optimization(Optimization optimization);
+            // void create_optimization(Optimization optimization, int argc, char** argv);
+            // int get_argc();
+            // char** get_argv();

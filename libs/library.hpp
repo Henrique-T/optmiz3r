@@ -99,10 +99,11 @@ namespace mainStructures {
     // Receive and process commands from terminal
     class CLI {
         private:
-        std::string _command;
-        bool _opt3 = false;
+            std::string _command;
+            bool _opt3 = false;
         public:
             CLI(int argc, char** argv);
+            CLI();
             ~CLI();
 
             std::string get_command();
@@ -110,13 +111,24 @@ namespace mainStructures {
             void deactivate_optmization();
     };
 
-    // Entry class for 
+    // Entry class for optimization
     class Optimizer {
         private:
-            mainStructures::Optimization _optimzation;
+            Optimization _optimization;
+            int _argc;
+            char** _argv;
+            CLI _cli;
         public:
+            Optimizer(CLI cli, int argc, char** argv) {_cli = cli; _argc = argc; _argv = argv;};
             Optimizer();
             ~Optimizer();
+
+            Optimization get_optimization();
+            void set_optimization(Optimization optimization);
+            void create_optimization(int argc, char** argv);
+            int get_argc();
+            char** get_argv();
+
     };
 
     class Optimization {
