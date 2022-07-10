@@ -1,2 +1,0 @@
-C:\MinGW\bin\ar.exe qc libOptmiz3r.a CMakeFiles/Optmiz3r.dir/Optmiz3r.cpp.obj
-C:\MinGW\bin\ranlib.exe libOptmiz3r.a
